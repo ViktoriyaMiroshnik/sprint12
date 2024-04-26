@@ -1,10 +1,10 @@
-FROM golang:1.22
+FROM golang:1.22.0
 
 WORKDIR /app
 
 COPY go.mod go.sum tracker.db ./
 
-RUN go mod download
+RUN go mod tidy 
 
 COPY *.go ./
 
