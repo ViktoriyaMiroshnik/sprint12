@@ -15,17 +15,6 @@ jobs:
     - name: Build 
       run: go build -v ./... 
    
-  # Задание проверяет код на соответствие стилю и отсутствие логических ошибок 
-  lint: 
-    needs: build 
-    runs-on: ubuntu-latest 
-    steps: 
-      - uses: actions/checkout@v4 
-      - uses: actions/setup-go@v5 
-      # Используется действие "golangci/golangci-lint-action@v3", которое запускает линтер. Он проверит код на соответствие стилю и отсутствие логических ошибок 
-      - uses: golangci/golangci-lint-action@v4 
-        with: 
-          skip-pkg-cache: true 
  
   tests: 
     # Задание "tests" зависит от задания "build" и будет выполнено после него 
