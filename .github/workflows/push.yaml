@@ -18,7 +18,7 @@ jobs:
  
   tests: 
     # Задание "tests" зависит от задания "build" и будет выполнено после него 
-    needs: lint 
+    needs: build 
     runs-on: ubuntu-latest 
     steps: 
     - uses: actions/checkout@v4 
